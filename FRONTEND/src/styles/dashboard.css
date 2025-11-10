@@ -1,0 +1,23 @@
+.dashboard-body {
+  padding: 2rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 2rem;
+  color: #007bff;
+}
