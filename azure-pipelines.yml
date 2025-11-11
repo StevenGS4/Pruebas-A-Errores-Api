@@ -7,7 +7,6 @@ variables:
   nodeVersion: '18.x'
   backendWorkingDirectory: 'BACKEND'
   frontendWorkingDirectory: 'FRONTEND'
-  # Variables a sobreescribir desde la librería/variable group de Azure DevOps
   azureServiceConnection: 'sc-pruebas-a-errores'
   resourceGroupName: 'rg-errors-dev'
   deployInfra: 'false'
