@@ -5,6 +5,8 @@ import cors from 'cors';
 import env from './srv/config/dotenvXConfig.js';
 import { connectToMongo } from './srv/config/connectToMongo.js';
 import respPWA from './srv/middlewares/respPWA.handler.js'; // ahora sí activo
+import { fileURLToPath } from "url";
+import path from "path";
 
 export default async function startServer(o = {}) {
   console.log('🚀 Iniciando servidor SAP CAP + Express...');
@@ -93,4 +95,13 @@ export default async function startServer(o = {}) {
 // Autoejecución si se lanza directamente
 if (import.meta.url === `file://${process.argv[1]}`) {
   startServer().catch(console.error);
+}
+
+const __filename = fileURLToPath(import.meta.url);
+if (process.argv[1] === __filename) {
+  console.log("🧩 Ejecutando startServer() automáticamente...");
+  startServer().catch((err) => {
+    console.error("💥 Error al iniciar servidor:", err);
+    process.exit(1);
+  });
 }
